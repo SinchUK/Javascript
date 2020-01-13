@@ -25,19 +25,31 @@ for (let i = 0; i < 2; i++) {
         console.log("Done!");
         appData.expenses[a] = b;
     } else {
-console.log("Wrong !!!");
+        console.log("Wrong !!!");
+        i = 0;
     }
-
- 
 
 //  console.log(appData.expenses);
 
 };
 
+// do {
+//     let i = 0,
+//         a = prompt("Введите обязательную статью расходов в этом месяце", ""),
+//         b = prompt("Во сколько обойдется?", "");
+   
+//    if((typeof(a))=== "string" && (typeof(a)) != null && (typeof(b)) != null 
+//        && a != " " && b != " " && a.length < 50) {
+//        console.log("Done!");
+//        appData.expenses[a] = b;
+//    } else {
+
+//    }
+// } while (i.length < 2);
 
 appData.moneyPerDay =  Math.floor(appData.budget/30);
 
-alert("ЕжедневнЫй бюджет: " + appData.moneyPerDay);
+alert("Ежедневный бюджет: " + appData.moneyPerDay);
 
 if (appData.moneyPerDay < 100 ) {
     console.log("Минимальный уровень достатка!");
