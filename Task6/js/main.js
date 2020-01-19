@@ -1,0 +1,36 @@
+'use strict';
+
+let start = document.getElementById('start'),
+    // budget = document.getElementsByClassName('buget')[0],
+    budgetValue = document.getElementsByClassName('budget-value')[0],
+    // daybudget = document.getElementsByClassName('daybudget')[0],
+    daybudgetValue = document.getElementsByClassName('daybudget-value')[0],
+    // level = document.getElementsByClassName('level')[0],
+    levelValue = document.getElementsByClassName('level-value')[0],
+    // expenses = document.getElementsByClassName('expenses')[0],
+    expensesValue = document.getElementsByClassName('expenses-value')[0],
+    // optionalexpenses = document.getElementsByClassName('optionalexpenses')[0],
+    optionalexpensesValue = document.getElementsByClassName('optionalexpenses-value')[0],
+    // income = document.getElementsByClassName('income')[0],
+    incomeValue = document.getElementsByClassName('income-value')[0],
+    // monthsavings = document.getElementsByClassName('monthsavings')[0],
+    monthsavingsValue = document.getElementsByClassName('monthsavings-value')[0],
+    // yearsavings = document.getElementsByClassName('yearsavings')[0],
+    yearsavingsValue = document.getElementsByClassName('yearsavings-value')[0],
+    
+    yearValue = document.getElementsByClassName('year-value')[0],
+    monthValue = document.getElementsByClassName('month-value')[0],
+    dayValue = document.getElementsByClassName('day-value')[0],
+    
+    expensesItem = document.getElementsByClassName('expenses-item'),
+    expensesItemBtn = document.getElementsByTagName('button')[0],
+    optionalExpensesBtn = document.getElementsByTagName('button')[1],
+    optionalExpensesItem = document.querySelectorAll('.optionalexpenses-item'),
+    chooseIncomeLabel = document.querySelector('.choose-income-label'),
+    savings = document.querySelector('#savings'),
+    sum = document.querySelector('#sum'),
+    percent = document.querySelector('#percent'),
+
+    year = document.querySelector('.year'),
+    month = document.querySelector('.month'),
+    day = document.querySelector('.day');
