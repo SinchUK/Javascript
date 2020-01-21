@@ -89,7 +89,7 @@ countBtn.addEventListener('click', function(){
 		appData.moneyPerDay =  (appData.budget/30).toFixed();
 		daybudgetValue.textContent = appData.moneyPerDay;
 		
-		if (appData.moneyPerDay < 100 ) {
+		if (appData.moneyPerDay <= 100 ) {
             levelValue.textContent = "Минимальный уровень достатка!";
          } else if (appData.moneyPerDay > 100) {
             levelValue.textContent = "Средний уровень достатка!";
@@ -104,6 +104,11 @@ countBtn.addEventListener('click', function(){
 	}
 });
 
+incomeItem.addEventListener('input', function() {
+    let items = income.value;
+    appData.income = items.split(', ');
+    incomeValue.textContent = appData.income;
+});
 
 let appData = {
     budget: money,
@@ -129,22 +134,6 @@ let appData = {
     },
 	
 	
-
-    chooseIncome: function() {
-        let items; 
-        
-        while((typeof(items)) === "number" || items == "" || items == null) {
-            items = prompt("Что принесет дополнительный доход? (Перечислите через запятую", "");
-        }
-            appData.income = items.split(', ');
-            appData.income.push(prompt("Может что-то еще?"));
-            appData.income.sort(); 
-                  
-        
-        appData.income.forEach(function(item, index) {
-            document.write("<h1>Способы доп. заработка : " + (index+1) +" "+ item + "</h1>");
-        });    
-    },
     showObj: function() {
         for (var key in appData) {
             console.log("Наша программа включает в себя данные : " + key + ": " + appData[key]);
