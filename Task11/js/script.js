@@ -5,12 +5,12 @@ console.log('Dom is ready');
     let tab = document.querySelectorAll('.info-header-tab'),
         info = document.querySelector('.info-header'),
         tabContent = document.querySelectorAll('.info-tabcontent');
-
+        
     function hideTabContent(a) {
         for (let i = a; i < tabContent.length; i++) {
             tabContent[i].classList.remove('show');
             tabContent[i].classList.add('hide');
-            console.log('first function in action');
+            
         }
     }
     hideTabContent(1);
@@ -24,9 +24,9 @@ console.log('Dom is ready');
     }
 
     info.addEventListener('click', function (event) {
-        console.log('click is working');
+       
         let target = event.target;
-        console.log(target);
+  
         if (target && target.classList.contains('info-header-tab')) {
             for (let i = 0; i < tab.length; i++) {
                 if (target == tab[i]) {
@@ -107,16 +107,54 @@ console.log('Dom is ready');
 
     let more = document.querySelector('.more'),
         overlay = document.querySelector('.overlay'),
-        close = document.querySelector('.popuo-close');
+        close = document.querySelector('.popup-close');
 
     more.addEventListener('click', function () {
         overlay.style.display = 'block';
         this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden';
         
     });
 
+    close.addEventListener('click', function () {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    });
 
+    
 
+    let descriptionBtn = document.querySelectorAll('description-btn'),
+        description = document.querySelector('.description');
 
+        console.log(description);
 
+        description.addEventListener('click', function (event, overlay) {
+            let target = event.target;
+            console.log("click!");
+            if (target && target.classList.contains('.dascription-btn') && overlay.style.display != 'block') {
+                showMoodal();
+                // for (let i = 0; i < descriptionBtn.length; i++) {
+                    
+                //     break;
+                // }
+            } else {
+                closeModal();
+                // for (let i = 0; i < descriptionBtn.length; i++) {
+                   
+                //     break;
+                }
+        });
+
+        function showMoodal(overlay) {
+            overlay.style.display = 'block';
+            overlay.classList.add('more-splash');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            overlay.style.display = 'none';
+            more.classList.remove('more-splash');
+            document.body.style.overflow = '';
+        }
 });
