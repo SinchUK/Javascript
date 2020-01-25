@@ -32,7 +32,6 @@ console.log('Dom is ready');
                 if (target == tab[i]) {
                     hideTabContent(0);
                     showTabContent(i);
-                    console.log("in cikle");
                     break;
                 }
             }
@@ -124,37 +123,44 @@ console.log('Dom is ready');
 
     
 
-    let descriptionBtn = document.querySelectorAll('description-btn'),
-        description = document.querySelector('.description');
+    let descriptionBtn = document.querySelectorAll('.description-btn'),
+        description = document.querySelectorAll('.description');
 
-        console.log(description);
+        console.log(description.length + ' - description  length btn');
 
-        description.addEventListener('click', function (event, overlay) {
-            let target = event.target;
-            console.log("click!");
-            if (target && target.classList.contains('.dascription-btn') && overlay.style.display != 'block') {
-                showMoodal();
-                // for (let i = 0; i < descriptionBtn.length; i++) {
+        for (let i = 0; i < description.length; i++) {
+            description[i].addEventListener('click', function (event) {
+                let target = event.target;
+    
+    
+                console.log("click!");
+                // console.log(target + ' target');
+                
+                if (target && target.classList.contains('description-btn')) {
                     
-                //     break;
-                // }
-            } else {
-                closeModal();
-                // for (let i = 0; i < descriptionBtn.length; i++) {
-                   
-                //     break;
-                }
-        });
+    
+    
+                    for (let i = 0; i < descriptionBtn.length; i++) {
+                        console.log(descriptionBtn[i] + ' btn');
+                        // && descriptionBtn[i].style.display != 'block'
+                        if (target == descriptionBtn[i]) {
+                            showMoodal();
+                            console.log("show");
+                            break;
+                        }
+                        
+                    }
+                    
+                } 
+            });
+        }
 
-        function showMoodal(overlay) {
+      
+
+        function showMoodal() {
             overlay.style.display = 'block';
             overlay.classList.add('more-splash');
             document.body.style.overflow = 'hidden';
         }
         
-        function closeModal() {
-            overlay.style.display = 'none';
-            more.classList.remove('more-splash');
-            document.body.style.overflow = '';
-        }
 });
