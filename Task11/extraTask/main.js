@@ -14,3 +14,6 @@ function showUser(surname, name) {
 	console.log('Пользователь ' + this.name + ' его возраст ' + this.value + ' лет');
 }
 showUser.call(john);
+
+// Alternative solution
+// showUser.apply(age, ["Горький","Максим"]);
