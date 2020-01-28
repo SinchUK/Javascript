@@ -8,14 +8,10 @@ class Element {
     }
 
     createDiv(){
-        let div = document.createElement('div');
+        let div = document.createElement('div'),
+            param = `height: ${this.height}px; width: ${this.width}%; background-color: ${this.bg}; font-size: ${this.fontSize}px; text-align: ${this.textAlign};`;
         document.body.appendChild(div);
-        div.textContent = 'Extra div';
-        div.style.backgroundColor = this.bg;
-        div.style.height = this.height + 'px';
-        div.style.fontSize = this.fontSize + 'px';
-        div.style.textAlign = this.textAlign;
-        div.style.width = this.width + '%';
+        div.style.cssText = param;
     }
 }
 
