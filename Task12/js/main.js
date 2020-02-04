@@ -10,6 +10,7 @@ class Element {
     createDiv(){
         let div = document.createElement('div'),
             param = `height: ${this.height}px; width: ${this.width}%; background-color: ${this.bg}; font-size: ${this.fontSize}px; text-align: ${this.textAlign};`;
+        
         document.body.appendChild(div);
         div.style.cssText = param;
     }
