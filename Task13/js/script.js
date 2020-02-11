@@ -182,12 +182,14 @@ window.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             forms[i].appendChild(statusMessage);
 
-            let request = new XMLHttpRequest();
-            request.open('POST', 'server.php');
-            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
             let formData = new FormData(form),
                 img = document.createElement('img');
+
+            let request = new XMLHttpRequest();
+            
+            request.open('POST', 'server.php');
+
+            request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
             request.send(formData);
             request.addEventListener('readystatechange', function () {
@@ -245,7 +247,18 @@ window.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Sent form - sent wia JSON 
+
+// Slider _______________________________________
+
+
+
+
+// =================================================
+    
+
+
+
+// Sent form - sent wia JSON 
     // ----------------------------------
 
     // Form
